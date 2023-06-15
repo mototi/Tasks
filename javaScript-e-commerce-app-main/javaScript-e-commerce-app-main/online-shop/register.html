@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration Page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <!-- Custom CSS -->
+    <style>
+      body {
+        background-color: #fdd835;
+      }
+      .form-register {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="alert alert-success hidden" role="alert" id="hideShowAlert">
+        <h4 class="alert-heading">Well done!</h4>
+        <p>
+          Congratulations! you completed the registration succesfully, please
+          click the below button in order to login to our website
+        </p>
+        <hr />
+        <p class="mb-0">
+          <button
+            type="button"
+            class="btn btn-primary btn-block"
+            id="goToLoginScreen"
+            style="width: 150px"
+          >
+            Go to Login page
+          </button>
+        </p>
+      </div>
+      <div
+        class="alert alert-danger hidden"
+        id="alert-on-fail-api-post"
+        role="alert"
+      >
+        we couldn't able to proceed with your request or this email is already
+        registered in our data base, Please check and try again.
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <form class="form-register">
+            <h2 class="text-center">Register</h2>
+            <div class="form-group">
+              <label for="inputFirstName">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputFirstName"
+                placeholder="Enter your first name"
+              />
+              <label for="inputLastName">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputLastName"
+                placeholder="Enter your last name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail"
+                placeholder="Enter email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="inputPassword"
+                placeholder="Password"
+              />
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              id="registerButton"
+            >
+              Register
+            </button>
+            <br />
+            <p>
+              if you don't want to register Now and just explore the products
+            </p>
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              id="goToHomePage"
+            >
+              Go To Home Page
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="module" src="./js/register.js"></script>
+  </body>
+</html>

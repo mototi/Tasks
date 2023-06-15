@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-success hidden" role="alert" id="hideShowAlert">
+          <h4 class="alert-heading">Well done!</h4>
+          <p>
+            Congratulations! you completed the registration succesfully, you
+            will be redirected to the Home page in 5 seconds.
+          </p>
+          <p>or you can click the below button</p>
+          <hr />
+          <p class="mb-0">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              id="goToHomePage"
+              style="width: 150px"
+            >
+              go To Home Page
+            </button>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="alert alert-danger hidden"
+          id="alert-on-fail-api-post"
+          role="alert"
+        >
+          we couldn't able to proceed with your request or this email is already
+          registered in our data base, Please check and try again.
+        </div>
+      </div>
+      <div
+        class="row align-items-center text-center"
+        style="justify-content: space-between; display: flex"
+      >
+        <div class="col-md-4 m-auto jumbotron">
+          <div class="email-section">
+            <input
+              style="margin-bottom: 10px"
+              type="email"
+              class="form-control email-signin-input"
+              placeholder="Please enter your Email"
+              id="email-input"
+            />
+          </div>
+          <div class="email-section m-3">
+            <input
+              style="margin-bottom: 10px"
+              type="password"
+              class="form-control pwd-signin-input"
+              placeholder="Please enter your Password"
+              id="password-input"
+            />
+          </div>
+          <button type="button" class="btn btn-warning m-3" id="login-button">
+            Login
+          </button>
+          <!-- jQuery -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <!-- Bootstrap JS -->
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script type="module" src="./js/signIn.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
