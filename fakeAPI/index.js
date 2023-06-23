@@ -2,7 +2,18 @@ import axios from "axios"
 
 
 axios.get('https://api.escuelajs.co/api/v1/products').then( res => {
-   catigorize(res.data);
+    
+
+    axios.get('https://api.currencyfreaks.com/v2.0/rates/latest?apikey=4bd29e63042a4801adc8f4dc0a9befa5').then( result => {
+        res.data.forEach(e => {
+            e.price = Math.round(result.data.rates["EGP"] * Number(e.price)) ;
+        })
+        let arr = catigorize(res.data);
+        console.log(arr);
+
+    })  
+
+
 })
   
 
@@ -24,7 +35,7 @@ const catigorize = (result) => {
         }
     });
     array.splice(0,1);
-    console.log(array);
+    return array ;
 }
 
 let searchindex  = (id , arr) => {
