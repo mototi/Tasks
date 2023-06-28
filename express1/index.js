@@ -18,8 +18,6 @@ app.get("/products/:id([0-9]+)" , getById)
 
 app.get("/products" , getAll) 
 
-//pp.post("/products" , create)
-
 app.post("/products" , [validate , create])
 
 app.listen(8080 , () => console.log("server on http://localhost:8080"));
