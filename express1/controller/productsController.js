@@ -28,7 +28,7 @@ import {getAllProducts,
             } else if (error.request) {
                 res.status(400);
             } else {
-                res.send(error.message);
+                res.send("not found");
             }
         })
     }
