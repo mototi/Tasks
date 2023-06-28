@@ -1,5 +1,5 @@
 import express from 'express' 
-import {getAll , getById , create} from './controller/productsController.js'
+import {getAll , getById , create, alter} from './controller/productsController.js'
 import {validatePost} from './services/productsServices.js'
 
 
@@ -20,12 +20,14 @@ app.get("/products" , getAll)
 
 app.post("/products" , [validatePost , create])
 
-app.put( "/products/:id([0-9]+)" , (req , res) => {
-    UpdateProductById(req.params.id , req.body).then( response =>{
-    res.status(200).send(response.data);
+app.put( "/products/:id([0-9]+)" , alter )
+
+app.delete ("/products/:id([0-9]+)" , (req,res) => {
+    deleteProductById(req.params.id).then( response => {
+        res.send("Deleted")
     }).catch( error => {
-        res.status(400).send("product not found");
-    })
+        res.status(404).send("product not found")
+    })  
 })
 
 app.listen(8080 , () => console.log("server on http://localhost:8080"));

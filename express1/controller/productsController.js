@@ -47,3 +47,11 @@ import {getAllProducts,
             res.end();
         })
     }
+
+    export const alter = (req , res) => {
+        UpdateProductById(req.params.id , req.body).then( response =>{
+        res.status(200).send(response.data);
+        }).catch( error => {
+            res.status(400).send("product not found");
+        })
+    }
