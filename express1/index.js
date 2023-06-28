@@ -20,4 +20,12 @@ app.get("/products" , getAll)
 
 app.post("/products" , [validatePost , create])
 
+app.put( "/products/:id([0-9]+)" , (req , res) => {
+    UpdateProductById(req.params.id , req.body).then( response =>{
+    res.status(200).send(response.data);
+    }).catch( error => {
+        res.status(400).send("product not found");
+    })
+})
+
 app.listen(8080 , () => console.log("server on http://localhost:8080"));
