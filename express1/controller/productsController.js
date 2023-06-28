@@ -55,3 +55,11 @@ import {getAllProducts,
             res.status(400).send("product not found");
         })
     }
+
+    export const deleteProduct = (req,res) => {
+        deleteProductById(req.params.id).then( response => {
+            res.send("Deleted")
+        }).catch( error => {
+            res.status(404).send("product not found")
+        })  
+    }
