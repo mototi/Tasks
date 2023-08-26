@@ -1,3 +1,5 @@
+CREATE DATABASE ecom; 
+USE ecom;
 
 CREATE TABLE customer (
     id INT AUTO_INCREMENT,
