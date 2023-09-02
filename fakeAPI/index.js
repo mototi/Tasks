@@ -10,6 +10,7 @@ axios.get('https://api.escuelajs.co/api/v1/products').then( res => {
         })
         let arr = catigorize(res.data);
         console.log(arr);
+        
 
     })  
 
